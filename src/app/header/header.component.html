@@ -1,0 +1,25 @@
+<header>
+  <div class="container">
+    <div class="header__container">
+      <div class="header__logo">
+        <img class="logo"
+             src="../../assets/img/logo.svg"
+             alt="logo">
+      </div>
+      <div [ngClass]="{'menu':true,'menu__open':openMenu}">
+        <nav class="navigation">
+          <ul class="navigation__container">
+            <li class="navigation__item">Пиццы</li>
+            <li class="navigation__item">Напитки</li>
+            <li class="navigation__item">Доставка и оплата</li>
+            <li class="navigation__item">Контакты</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="burger__open" (click)="openMenu = !openMenu" [ngClass]="{'burger__close':openMenu}">
+    <span></span>
+  </div>
+</header>
