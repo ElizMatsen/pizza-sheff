@@ -1,0 +1,13 @@
+@import "color";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+$font-family: 'Roboto', sans-serif;
+@mixin font($font_size:16px, $line_height:20px, $font_weight:400, $font_style:normal, $font_color: $content_primary) {
+  font-size: $font_size;
+  line-height: $line_height;
+  font-family: $font_family;
+  font-weight: $font_weight;
+  font-style: $font_style;
+  color: $font_color;
+  letter-spacing: 0.02em;
+}
