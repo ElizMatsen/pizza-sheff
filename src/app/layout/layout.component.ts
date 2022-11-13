@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-layout',
@@ -6,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  chosenProduct: BehaviorSubject<any> = new BehaviorSubject<any>(null)
   products = [
     {
       id: 1,
@@ -58,6 +60,16 @@ export class LayoutComponent implements OnInit {
   ]
 
   constructor() {
+  }
+
+  openImage(product: any): void {
+    this.chosenProduct.next(product)
+    document.body.classList.add("body-overlay")
+  }
+
+  closeImage(): void {
+    this.chosenProduct.next(null)
+    document.body.classList.remove("body-overlay")
   }
 
   ngOnInit(): void {

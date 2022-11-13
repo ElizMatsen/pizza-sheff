@@ -65,7 +65,7 @@
       <div class="product__container">
         <ng-container *ngFor="let item of products">
           <div class="product__item">
-            <img src="{{item.img}}" alt="pizza">
+            <img src="{{item.img}}" alt="pizza" (click)="openImage(item)">
             <div class="product__description">
               <div class="product__item_title">{{item.title}}</div>
               <div class="product__item_text">{{item.description}}</div>
@@ -78,4 +78,17 @@
     </section>
   </div>
 </div>
+
+<ng-container *ngIf="chosenProduct | async as product">
+  <div class="image__container">
+    <img
+      class="image__container_close"
+      src="./assets/img/ic_cross.svg" alt="cross"
+      (click)="closeImage()"
+    >
+    <div class="image__body">
+      <img src="{{product.img}}" alt="pizza">
+    </div>
+  </div>
+</ng-container>
 
