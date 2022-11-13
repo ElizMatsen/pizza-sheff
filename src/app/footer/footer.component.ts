@@ -39,6 +39,10 @@ export class FooterComponent implements OnInit {
       //
       this.submitForm.reset();
       this.successPopup = true;
+
+      setTimeout(() => {
+        this.successPopup = false;
+      }, 2000);
     } else {
       if (this.submitForm.value.fio === '' || this.submitForm.value.fio === null) {
         this.submitForm.controls['fio'].markAsTouched();

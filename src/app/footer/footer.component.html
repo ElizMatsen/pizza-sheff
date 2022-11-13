@@ -12,7 +12,9 @@
       <input formControlName="fio" type="text" onkeyup="this.value = this.value.replace(/\./g, '')"
              placeholder="Ваше имя">
       <input formControlName="address" type="text" placeholder="Адрес доставки">
-      <input formControlName="tel" type="tel" onkeyup="this.value = this.value.replace(/[^\d]/g,'')"
+      <input formControlName="tel" type="tel"
+             pattern="[0-9]{10,}"
+             onkeyup="this.value = this.value.replace(/[^\d]/g,'')"
              placeholder="Телефон">
       <button class="btn">Оформить заказ</button>
     </form>
