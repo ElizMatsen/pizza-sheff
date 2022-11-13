@@ -60,6 +60,22 @@
         </div>
       </div>
     </section>
+    <section class="product">
+      <h2>Выберите свою любимую пиццу </h2>
+      <div class="product__container">
+        <ng-container *ngFor="let item of products">
+          <div class="product__item">
+            <img src="{{item.img}}" alt="pizza">
+            <div class="product__description">
+              <div class="product__item_title">{{item.title}}</div>
+              <div class="product__item_text">{{item.description}}</div>
+            </div>
+
+            <div class="btn">В корзину</div>
+          </div>
+        </ng-container>
+      </div>
+    </section>
   </div>
 </div>
 
