@@ -1,0 +1,28 @@
+<footer class="footer">
+  <div class="footer__content">
+    <div class="footer__content_description">
+      <h2>Хватит думать!
+        <span>Доставим заказ за 30 минут!</span></h2>
+      <div class="footer__content_text">Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа.
+        Если мы опоздаем даже на 1 минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы
+        гордимся нашим сервисом и сделаем всё, чтобы наш клиент был доволен и не остался голодный!
+      </div>
+    </div>
+    <form [formGroup]="submitForm" (ngSubmit)="onSubmit()" class="form">
+      <input formControlName="fio" type="text" onkeyup="this.value = this.value.replace(/\./g, '')"
+             placeholder="Ваше имя">
+      <input formControlName="address" type="text" placeholder="Адрес доставки">
+      <input formControlName="tel" type="tel" onkeyup="this.value = this.value.replace(/[^\d]/g,'')"
+             placeholder="Телефон">
+      <button class="btn">Оформить заказ</button>
+    </form>
+  </div>
+  <div class="footer__image">
+    <img src="./assets/img/footer_pizza.png" alt="pizza">
+  </div>
+  <ng-container *ngIf="successPopup">
+    <div class="popup">
+      <div class="popup__title">Спасибо за заказ</div>
+    </div>
+  </ng-container>
+</footer>
